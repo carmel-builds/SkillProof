@@ -1,5 +1,10 @@
 # SkillProof
 ### demonstrating potential beyond traditional work experience
+## View the Live Prototype 
+**[Click here to open the SkillProof website] (https://carmel-builds.github.io/SkillProof/)**
+## Project Repository 
+Browse the source code and project information here:
+[View the SkillProof GitHub Repository](https://github.com/carmel-builds/SkillProof) 
 ## About the project 
 skillproof is a proposed platform designed to help graduates demonstrate their abilities to potential employers through practical challenges, project evidence and structure skills assessments
 ## The Problem 
