@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillProof | Skills Beyond a CV</title>
+
+<style>
+:root {
+  --blue: #2457d6;
+  --dark: #17233c;
+  --light: #f3f6fc;
+  --green: #16856b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid #e0e5ef;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 15px;
+  font-size: 14px;
+}
+
+nav button {
+  background: white;
+  color: var(--dark);
+}
+
+nav button.active,
+.primary {
+  background: var(--blue);
+  color: white;
+}
+
+main {
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+.hero {
+  background: var(--dark);
+  color: white;
+  border-radius: 18px;
+  padding: 40px 28px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 650px;
+  color: #e1e8fa;
+}
+
+.tag {
+  color: #b9d0ff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 15px #17233c0b;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd4e3;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.primary {
+  margin-top: 15px;
+}
+
+.result {
+  display: none;
+  background: #e5f7f0;
+  border-left: 4px solid var(--green);
+  padding: 16px;
+  margin-top: 18px;
+  border-radius: 8px;
+}
+
+.muted {
+  color: #667085;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #667085;
+  font-size: 13px;
+}
+
+.bar {
+  background: #e4e9f2;
+  height: 9px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.fill {
+  height: 100%;
+  background: var(--blue);
+  width: 0%;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">✦ SkillProof</div>
+
+  <nav>
+    <button class="active" onclick="showPage('home', this)">Overview</button>
+    <button onclick="showPage('profile', this)">Graduate Profile</button>
+    <button onclick="showPage('challenge', this)">Practical Challenge</button>
+    <button onclick="showPage('assessment', this)">Assessment</button>
+  </nav>
+</header>
+
+<main>
+
+<section id="home" class="active">
+
+  <div class="hero">
+    <div class="tag">Graduate Employability</div>
+    <h1>Your degree tells your story.<br>Your skills prove your potential.</h1>
+    <p>
+      SkillProof is a proposed platform that helps graduates demonstrate
+      their abilities through practical challenges, project evidence
+      and structured skills assessments.
+    </p>
+    <button class="primary" onclick="showPage('challenge', document.querySelectorAll('nav button')[2])">
+      Try a practical challenge →
+    </button>
+  </div>
+
+  <h2>The problem we're exploring</h2>
+  <p>
+    Graduates can struggle to demonstrate their abilities when they have
+    limited formal work experience. A CV may not fully show what someone
+    can actually do.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>For graduates</h3>
+      <p>Showcase projects, practical skills and evidence of your abilities.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>For employers</h3>
+      <p>Explore practical evidence alongside qualifications and interviews.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚖️</div>
+      <h3>Fairer assessment</h3>
+      <p>Use clear assessment criteria instead of relying only on first impressions.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>How it could work</h3>
+    <p>01 — A graduate completes a relevant practical task.</p>
+    <p>02 — The graduate adds the work to a skills portfolio.</p>
+    <p>03 — An employer assesses the evidence against a clear rubric.</p>
+    <p>04 — The results support, rather than replace, the recruitment process.</p>
+  </div>
+
+</section>
+
+<section id="profile">
+
+  <h1>Graduate Skills Profile</h1>
+  <p class="muted">
+    This is a fictional example showing how a graduate profile could look.
+  </p>
+
+  <div class="card">
+    <h2>Alex Morgan</h2>
+    <p>Business Management Graduate · Entry-level candidate</p>
+    <p><strong>Career interests:</strong> Marketing, administration and business operations</p>
+
+    <h3>Skills to demonstrate</h3>
+    <div class="grid">
+      <div class="card">
+        <h3>Communication</h3>
+        <p>Written communication and presenting ideas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Problem-solving</h3>
+        <p>Analysing situations and suggesting solutions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digital skills</h3>
+        <p>Using digital tools to complete practical tasks.</p>
+      </div>
+    </div>
+
+    <h3>Portfolio evidence</h3>
+    <p>A sample marketing plan, a project summary and a written case-study response.</p>
+
+    <p class="muted">
+      All details are illustrative. No real graduate has been assessed.
+    </p>
+  </div>
+
+</section>
+
+<section id="challenge">
+
+  <h1>Practical Skills Challenge</h1>
+  <p>
+    Try a sample task designed to explore how a graduate communicates
+    and approaches a business problem.
+  </p>
+
+  <div class="card">
+    <div class="tag">Sample marketing task</div>
+    <h2>Help a small student-owned business</h2>
+
+    <p>
+      A student-owned business sells affordable products on campus but
+      struggles to attract customers. The owner has a limited marketing budget.
+    </p>
+
+    <p><strong>Your task:</strong> Suggest two practical ways to reach more
+    customers. Explain why each idea could work and how you would measure success.</p>
+
+    <label class="label" for="answer">Your response</label>
+    <textarea id="answer" placeholder="Write your ideas here..."></textarea>
+
+    <button class="primary" onclick="saveAnswer()">Save my response</button>
+
+    <div class="result" id="answerResult">
+      <strong>Response saved in this session!</strong>
+      <p>
+        Your answer is displayed here for your review. It has not been
+        submitted to an employer or independently evaluated.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section id="assessment">
+
+  <h1>Skills Assessment Preview</h1>
+  <p>
+    This sample rubric illustrates how an employer might assess submitted
+    work using consistent criteria.
+  </p>
+
+  <div class="card">
+    <h3>Example assessment rubric</h3>
+    <p class="muted">Rate each area from 0 to 5. This is a demonstration, not a validated assessment.</p>
+
+    <label class="label" for="communication">Communication</label>
+    <select id="communication">
+      <option value="0">0 — Not demonstrated</option>
+      <option value="1">1 — Beginning</option>
+      <option value="2">2 — Developing</option>
+      <option value="3">3 — Competent</option>
+      <option value="4">4 — Strong</option>
+      <option value="5">5 — Excellent</option>
+    </select>
+
+    <label class="label" for="problem">Problem-solving</label>
+    <select id="problem">
+      <option value="0">0 — Not demonstrated</option>
+      <option value="1">1 — Beginning</option>
+      <option value="2">2 — Developing</option>
+      <option value="3">3 — Competent</option>
+      <option value="4">4 — Strong</option>
+      <option value="5">5 — Excellent</option>
+    </select>
+
+    <label class="label" for="creativity">Creativity</label>
+    <select id="creativity">
+      <option value="0">0 — Not demonstrated</option>
+      <option value="1">1 — Beginning</option>
+      <option value="2">2 — Developing</option>
+      <option value="3">3 — Competent</option>
+      <option value="4">4 — Strong</option>
+      <option value="5">5 — Excellent</option>
+    </select>
+
+    <label class="label" for="reasoning">Reasoning and justification</label>
+    <select id="reasoning">
+      <option value="0">0 — Not demonstrated</option>
+      <option value="1">1 — Beginning</option>
+      <option value="2">2 — Developing</option>
+      <option value="3">3 — Competent</option>
+      <option value="4">4 — Strong</option>
+      <option value="5">5 — Excellent</option>
+    </select>
+
+    <button class="primary" onclick="calculateScore()">Calculate sample score</button>
+
+    <div class="result" id="scoreResult">
+      <h2 id="score"></h2>
+      <div class="bar"><div class="fill" id="scoreBar"></div></div>
+      <p id="scoreMessage"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Important design considerations</h3>
+    <p>Assessment criteria should be relevant to the job and clearly explained.</p>
+    <p>Employers should consider accessibility, bias, privacy and reasonable accommodations.</p>
+    <p>A score should not be the sole basis for a hiring decision.</p>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  SkillProof · Early-stage student concept · Prototype for demonstration
+  <br>
+  The concept requires further research, user testing and validation.
+</footer>
+
+<script>
+function showPage(pageId, button) {
+  document.querySelectorAll("main section").forEach(function(section) {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(function(navButton) {
+    navButton.classList.remove("active");
+  });
+
+  button.classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function saveAnswer() {
+  const answer = document.getElementById("answer").value.trim();
+
+  if (!answer) {
+    alert("Please write a response first.");
+    return;
+  }
+
+  document.getElementById("answerResult").style.display = "block";
+}
+
+function calculateScore() {
+  const fields = ["communication", "problem", "creativity", "reasoning"];
+
+  let total = 0;
+
+  fields.forEach(function(field) {
+    total += Number(document.getElementById(field).value);
+  });
+
+  const percentage = total * 5;
+
+  document.getElementById("score").textContent =
+    "Sample score: " + total + " / 20 (" + percentage + "%)";
+
+  document.getElementById("scoreBar").style.width = percentage + "%";
+
+  document.getElementById("scoreMessage").textContent =
+    "This is a demonstration score based on the ratings you selected. " +
+    "It is not a real hiring recommendation or a validated measure of ability.";
+
+  document.getElementById("scoreResult").style.display = "block";
+}
+</script>
+
+</body>
+    </html>
